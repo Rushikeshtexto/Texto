@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./frontpage.css";
 import Pagination from "./pagination"; 
-
+///////////////////////////////////////
 const FrontendPage = () => {
   const [activeTab, setActiveTab] = useState("home");
   const [users, setUsers] = useState([]);
