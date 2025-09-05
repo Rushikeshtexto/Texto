@@ -1,0 +1,282 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, .app {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+
+.signup-container {
+  min-height: 400px;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-start;     
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+
+.tab-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  height: 500px;
+  width: 180px;
+}
+
+.tab-link {
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab-link:hover {
+  background: #c27edf;
+  color: white;
+}
+
+
+.tab-content {
+  flex: 1;                          
+  padding: 0;                       
+  display: flex;
+  flex-direction: column;
+}
+
+
+.footer {
+  background: #f0f2f5;
+  padding: 30px 50px;
+  margin-top: 0px;
+}
+/*footer*/
+.footer-logo {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+/*footer*/
+.footer-grid {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+/*footer*/
+.footer-grid h4 {
+  margin-bottom: 10px;
+}
+/*footer*/
+.footer-grid a {
+  display: block;
+  margin-bottom: 6px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+/*footer*/
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* Profiles Section Container */
+/* Profiles Section */
+.profiles-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 0;                 /* no extra rounded corners inside */
+  box-shadow: none;                 /* remove shadow so it blends */
+  flex: 1;                          /* take full space in tab-content */
+  height: 100%;                     /* stretch inside container */
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;           /* stack title, search, table */
+}
+
+
+/*  profile Title */
+.profiles-section h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* profile Search Box */
+.search-box {
+  margin-bottom: 20px;
+  margin-left:850px;
+  padding: 10px 14px;
+  width: 280px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+  align-items:right;
+}
+/* profile search focus  */
+.search-box:focus {
+  border-color: #4caf50;
+  box-shadow: 0px 0px 4px rgba(76, 175, 80, 0.4);
+}
+
+/* profile No entries message */
+.no-entries {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* profile Table */
+.profiles-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* profile Table header table row*/
+.profiles-table thead tr {
+  background-color: #4caf50;
+  color: white;
+  text-align: left;
+}
+/* profile Table header  */
+.profiles-table th {
+  padding: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* profile Table rows */
+.profiles-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  color: #444;
+}
+
+/* profile Zebra effect */
+.even-row {
+  background-color: #f9f9f9;
+}
+.odd-row {
+  background-color: #fff;
+}
+
+/* profile  Hover effect */
+.profiles-table tr:hover {
+  background-color: #e6f7ff;
+  transition: 0.3s;
+}
+
+
+
+/*segment section*/
+/* Segments Section Container */
+.segments-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.segments-section h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+
+.segments-topbar {
+  display: flex;
+  justify-content: space-between;  /* search left, buttons right */
+  align-items: center;
+  flex-wrap: wrap;                 /* responsive for smaller screens */
+  gap: 10px;
+}
+
+
+.segments-search {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.segments-search:focus {
+  border-color: #4caf50;
+  box-shadow: 0px 0px 4px rgba(76, 175, 80, 0.4);
+}
+
+.segments-buttons {
+  display: flex;
+  gap: 12px; /* space between Add List & Add Segment */
+}
+
+.btn {
+  background: #c27edf;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #a85ecf;
+}
+
+.table-container {
+  max-height: 400px;   
+  overflow-y: auto;    /* vertical scroll */
+  overflow-x: hidden;  
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+

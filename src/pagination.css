@@ -1,0 +1,39 @@
+.profiles-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;  /* adjust height depending on your design */
+  position: relative;
+}
+
+.table-container {
+  flex: 1;  /* take available space */
+  overflow-x: auto;
+}
+.pagination {
+  margin-top: auto;  /* push to bottom of profiles-section */
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  background: #c27edf;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background: #ddd;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-weight: bold;
+}
