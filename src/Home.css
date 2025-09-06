@@ -1,0 +1,12 @@
+*{
+
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+.Homepage h1{
+   font-size: 35px;
+   color:aquamarine;
+   margin-bottom: 10px;
+
+}

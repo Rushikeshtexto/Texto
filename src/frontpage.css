@@ -39,7 +39,7 @@ body, .app {
 }
 
 
-.tab-buttons {
+.tab-buttons{
   display: flex;
   flex-direction: column;
   padding: 20px;
