@@ -1,0 +1,59 @@
+/* Container for the segments section */
+.segments-section {
+  padding: 20px;
+  background-color: #f8f9fa; /* light gray background */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Section heading */
+.segments-section h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Search input */
+.segments-search {
+  width: 100%;
+  max-width: 400px; /* optional max width */
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Buttons container */
+.segments-buttons {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  flex-wrap: wrap; /* wrap buttons on smaller screens */
+}
+
+/* Buttons */
+.segments-buttons .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff; /* blue button */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.segments-buttons .btn:hover {
+  background-color: #0056b3; /* darker blue on hover */
+}
+
+/* Specific button variations */
+.segments-buttons .add-segment {
+  background-color: #28a745; /* green button */
+}
+
+.segments-buttons .add-segment:hover {
+  background-color: #1e7e34;
+}
