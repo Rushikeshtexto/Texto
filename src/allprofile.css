@@ -117,10 +117,8 @@
   margin: 0 1px;
 }
 
-
-.page-info {
-    margin-top: 10px;      /* space above the page info */
-    font-weight: bold;      
-    text-align: center;    /* center below table */
-    width: 100%;
+.profiles-table .color{
+  color: black;
+  text-decoration: underline;
+  
 }

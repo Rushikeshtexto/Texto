@@ -1,0 +1,55 @@
+/* ===== Main Layout ===== */
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+   min-height: 400px;
+  background: #fff;
+}
+
+/* ===== Sidebar Styling ===== */
+.sidebar {
+  width: 180px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex-shrink: 0;   /* ✅ Prevent shrinking */
+  position: sticky; /* ✅ Keeps it in place when scrolling */
+  top: 100px;       /* Adjust based on your Header height */
+  height: fit-content;
+}
+
+/* Sidebar Links */
+.sidebar .tab-link {
+  display: block;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar .tab-link:hover {
+  background: #c27edf;
+  color: #fff;
+}
+
+.sidebar .tab-link.active {
+  background: #007bff;
+  color: #fff;
+}
+
+/* ===== Profile Card ===== */
+.tablecontainer {
+  background: rgb(235, 213, 185);
+  border-radius: 20px;
+  padding: 20px;
+  flex: 1; /* ✅ Takes full remaining width */
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}

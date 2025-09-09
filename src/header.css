@@ -4,7 +4,7 @@
     box-sizing: border-box;
   }
   
-   .app {
+  body, .app {
     font-family: Arial, sans-serif;
     color: #333;
     background: #fff;

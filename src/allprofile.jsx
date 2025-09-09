@@ -2,7 +2,9 @@
 
 import React ,{useState,useEffect} from "react";
 //import Pagination from "./pagination"; 
-import "./allprofile.css"
+import "./allprofile.css";
+import {Link } from "react-router-dom";
+  
 const Profile=()=>{
     
     
@@ -49,16 +51,16 @@ useEffect(() => {
   setPageInput(currentPage);
 }, [currentPage]);
 
-  useEffect(()=>{  const fetchUsers = async () => {
-      try {
-        const res = await fetch("http://localhost:5000/users");
-        const data = await res.json();
-        console.log("✅ Users fetched:", data); // <-- Add this
-        setUsers(data);
-      } catch (err) {
-        console.error("Error fetching users:", err);
-      }
+
+ const fetchUsers =  () => {
+      fetch("http://localhost:5000/users")
+      .then(res=>res.json())
+      .then(data=>setUsers(data))
+      .catch(err=>console.error(err))
     };
+
+
+  useEffect(()=>{ 
     fetchUsers();
   },[])
 
@@ -98,8 +100,8 @@ return(
                           <tr
                             key={u.id}
                             className={index % 2 === 0 ? "even-row" : "odd-row"}
-                          >
-                            <td>{u.name}</td>
+                          ><td>
+                           <Link to={`/profile/${u.id}`} className="color"> {u.name}</Link></td>
                             <td>{safeValue(u.email)}</td>
                             <td>{u.phone}</td>
                             <td>{u.location}</td>
@@ -165,9 +167,7 @@ return(
     </button>
 
     </div>
-    <div className="page-info">
-{currentPage} 
-</div>
+ 
                 </>
               )}
             </div>

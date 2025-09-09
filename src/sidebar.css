@@ -1,0 +1,32 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: 100%;         /* 🔹 Fill parent container (signup-container) */
+  min-height: 100vh;
+}
+
+.sidebar .tab-link {
+  margin-bottom: 15px;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar .tab-link:hover {
+  background: #c27edf;
+  color: #fff;
+}
+
+.sidebar .tab-link.active {
+  background: #007bff;
+  color: #fff;
+}
