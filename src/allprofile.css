@@ -34,7 +34,7 @@
 
 /* Table Container */
 .table-container {
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: auto;    /* vertical scroll */
   border: 1px solid #ddd;
   border-radius: 8px;

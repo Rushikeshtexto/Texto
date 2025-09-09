@@ -5,66 +5,34 @@
   box-sizing: border-box;
 }
 
-body, .app {
+ .app {
   font-family: Arial, sans-serif;
   color: #333;
   background: #fff;
-}
-
-/* ===== Navbar ===== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.navbar .logo {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-/* ===== Signup Container ===== */
-.signup-container {
-  min-height: 400px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background: #fff;
-  margin: 0;
+   margin: 0;
   padding: 0;
 }
 
-/* ===== Tab Buttons ===== */
-.tab-buttons {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background: #f4f4f4;
-  border-radius: 8px;
-  height: 550px;
-  width: 180px;
+
+
+.container {
+    margin: 0;      /* remove space */
+  padding: 0;
+
+  width: 1400px;          /* fixed width */
+  height: 620px;          /* fixed height */
+  display: flex;          /* sidebar + content side by side */
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: hsl(12, 11%, 91%);
+  margin: 0 auto; 
+  margin-top: 0px;        /* center horizontally */
+  padding: 0;
+  border: 0px solid #333; /* optional: visual boundary */
+  box-sizing: border-box; /* makes padding included in size */
 }
 
-.tab-link {
-  margin-bottom: 15px;
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
-  cursor: pointer;
-}
 
-.tab-link:hover {
-  background: #c27edf;
-  color: white;
-}
-
-/* ===== Tab Content ===== */
 .tab-content {
   flex: 1;
   display: flex;
@@ -72,45 +40,3 @@ body, .app {
   overflow: hidden;
 }
 
-/* ===== Footer ===== */
-.footer {
-  background: #f0f2f5;
-  padding: 30px 50px;
-  margin-top: 0px;
-}
-
-.footer-logo {
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.footer-grid {
-  display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
-}
-
-.footer-grid h4 {
-  margin-bottom: 10px;
-}
-
-.footer-grid a {
-  display: block;
-  margin-bottom: 6px;
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
-
-.footer-bottom {
-  margin-top: 20px;
-  font-size: 12px;
-  color: #666;
-  text-align: center;
-}
-
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 2px;
-}

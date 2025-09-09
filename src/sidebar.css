@@ -1,32 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sidebar */
 .sidebar {
+  width: 220px;
+  background: #f9fafb;
+  min-height: 100%;
+  padding: 20px 15px;
+  border-right: 0px solid #ddd;
   display: flex;
   flex-direction: column;
-  width: 180px;
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  height: 100%;         /* 🔹 Fill parent container (signup-container) */
-  min-height: 100vh;
+  gap: 15px;
+
+  border-radius: 0 !important;   /* 🔑 force square edges */
 }
 
-.sidebar .tab-link {
-  margin-bottom: 15px;
-  cursor: pointer;
-  color: #333;
+
+.tab-link {
   text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 6px;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 12px;
+  border-radius: 0 !important;
   transition: background 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
-.sidebar .tab-link:hover {
+.tab-link:hover {
+  background: #e5e7eb;
+  color: #000;
+}
+
+.tab-link.active {
   background: #c27edf;
   color: #fff;
-}
-
-.sidebar .tab-link.active {
-  background: #007bff;
-  color: #fff;
+  font-weight: bold;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./UserProfile.css";
 import Header from "./header";
 import Footer from "./footer";
@@ -9,7 +9,9 @@ import List from "./list";
 const UserProfile = () => {
   const { id } = useParams(); // get id from URL
   const [user, setUser] = useState(null);
-  const [activeTab, setActiveTab] = useState("profile");
+    const navigate = useNavigate();
+
+  const [activeTab, setActiveTab] = useState("profiles");
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -31,43 +33,70 @@ const UserProfile = () => {
 
   return (
 <div className="app">
+
+  <div className="app">
       <Header />
-        <div className="main-content">
 
-          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-         <div className="">
+      <div className="container">
+     
+        {/* ✅ Use Sidebar instead of hardcoding */}
+        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+
+        <section className="tab-content">
           {activeTab === "home" && <Home />}
-          
-          {activeTab === "profile" && (
+          {activeTab === "profiles" && (
             <div className="tablecontainer">
-              <h2>{user.name.charAt(0).toUpperCase() + user.name.slice(1)} Profile</h2>
-              <br />
-              <p>
-                <i className="fa-solid fa-envelope"></i> <b>Email:</b> {user.email}
-              </p>
-              <p>
-                <i className="fa-solid fa-phone"></i> <b>Phone:</b> {user.phone}
-              </p>
-              <p>
-                <i className="fa-solid fa-location-dot"></i> <b>Location:</b> {user.location}
-              </p>
-              <p>
-                <i className="fa-solid fa-calendar-check"></i> <b>First Active:</b> {user.first_active}
-              </p>
-              <p>
-                <i className="fa-solid fa-clock"></i> <b>Last Updated:</b> {user.last_updated}
-              </p>
-              <br />
-              <Link className="link" to="/">⬅ Back to Profiles</Link>
-            </div>
-          )}
+  <h2 className="profile-title">
+    {user.name.charAt(0).toUpperCase() + user.name.slice(1)} Profile
+  </h2>
 
+  <div className="profile-info">
+    <p>
+      <i className="fa-solid fa-envelope"></i>
+      <span className="label">Email:</span>
+      <span className="value">{user.email}</span>
+    </p>
+
+    <p>
+      <i className="fa-solid fa-phone"></i>
+      <span className="label">Phone:</span>
+      <span className="value">{user.phone}</span>
+    </p>
+
+    <p>
+      <i className="fa-solid fa-location-dot"></i>
+      <span className="label">Location:</span>
+      <span className="value">{user.location}</span>
+    </p>
+
+    <p>
+      <i className="fa-solid fa-calendar-check"></i>
+      <span className="label">First Active:</span>
+      <span className="value">{user.first_active}</span>
+    </p>
+
+    <p>
+      <i className="fa-solid fa-clock"></i>
+      <span className="label">Last Updated:</span>
+      <span className="value">{user.last_updated}</span>
+    </p>
+  </div>
+
+  <button className="back-btn" onClick={() => navigate("/")}>
+    ⬅ Back to Profiles
+  </button>
+</div>
+
+          )}
           {activeTab === "segments" && <List />}
-          </div>
-        </div>
+        </section>
+      </div>
       
 
       <Footer />
+    </div>
+    
+      
     </div>
   );
 };

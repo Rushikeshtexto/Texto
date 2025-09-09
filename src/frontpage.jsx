@@ -8,13 +8,14 @@ import Footer from "./footer";
 import Sidebar from "./sidebar";  // ✅ Import Sidebar
 
 const FrontendPage = () => {
-  const [activeTab, setActiveTab] = useState("home"); // default selected tab
+  const [activeTab, setActiveTab] = useState("profiles"); // default selected tab
 
   return (
     <div className="app">
       <Header />
 
-      <div className="signup-container">
+      <div className="container">
+     
         {/* ✅ Use Sidebar instead of hardcoding */}
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
@@ -24,6 +25,7 @@ const FrontendPage = () => {
           {activeTab === "segments" && <List />}
         </section>
       </div>
+      
 
       <Footer />
     </div>

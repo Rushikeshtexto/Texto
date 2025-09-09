@@ -3,12 +3,14 @@
     padding: 0;
     box-sizing: border-box;
   }
+body, .app {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: #fff;  /* make it same across all */
   
-  body, .app {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background: #fff;
-  }
+  display: flex;
+  flex-direction: column;
+}
   
   /* Navbar */
   .navbar {
