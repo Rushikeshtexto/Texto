@@ -1,0 +1,24 @@
+.pagination {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  background: #c27edf;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination .searchpagination {
+  width: 30px;
+  margin: 0 1px;
+}

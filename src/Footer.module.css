@@ -18,21 +18,21 @@
     margin-top: 0px;
   }
   
-  .footer-logo {
+  .footerlogo {
     font-weight: bold;
     margin-bottom: 20px;
   }
   
-  .footer-grid {
+  .footergrid {
     display: flex;
     gap: 50px;
   }
   
-  .footer-grid h4 {
+  .footergrid h4 {
     margin-bottom: 10px;
   }
   
-  .footer-grid a {
+  .footergrid a {
     display: block;
     margin-bottom: 6px;
     text-decoration: none;
@@ -40,7 +40,7 @@
     font-size: 14px;
   }
   
-  .footer-bottom {
+  .footerbottom {
     margin-top: 20px;
     font-size: 12px;
     color: #666;

@@ -1,5 +1,5 @@
 import React  from "react";
-import "./Home.css";
+import styles from "./Home.module.css";
 
 const Home=()=>{
 
@@ -8,7 +8,7 @@ const Home=()=>{
 return(
 
 
-<div className="Homepage">
+<div className={styles.Homepage}>
 <h1>Welcome to texto </h1>
 <p> HI Texto is the software developement company.</p>
 </div>

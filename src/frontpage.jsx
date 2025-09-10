@@ -1,29 +1,32 @@
 import React, { useState } from "react";
-import "./frontpage.css";
+
 import Home from "./Home";
 import Profile from "./allprofile";
 import List from "./list";
 import Header from "./header";
 import Footer from "./footer";
 import Sidebar from "./sidebar";  // ✅ Import Sidebar
+import styles from "./frontpage.module.css"
 
 const FrontendPage = () => {
   const [activeTab, setActiveTab] = useState("profiles"); // default selected tab
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header />
 
-      <div className="container">
+      <div className={styles.container}>
      
         {/* ✅ Use Sidebar instead of hardcoding */}
+        <div  className={styles.sidebarcontainer}>
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+        </div>
 
-        <section className="tab-content">
+        <div className={styles.tabcontent}>
           {activeTab === "home" && <Home />}
           {activeTab === "profiles" && <Profile />}
           {activeTab === "segments" && <List />}
-        </section>
+        </div>
       </div>
       
 

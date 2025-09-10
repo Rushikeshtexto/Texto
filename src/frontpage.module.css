@@ -1,0 +1,38 @@
+/* Container already defined */
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 1400px;
+  height: 620px;
+  display: flex;           /* row layout */
+  justify-content: flex-start;
+  align-items: stretch;    /* make children stretch full height */
+  background: hsl(12, 11%, 91%);
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* Sidebar wrapper */
+.sidebar-container {
+  width: 220px;            /* fixed sidebar width */
+  background: #f4f4f4;
+  border-right: 1px solid #ddd;      /* scroll if sidebar is long */
+  height: 100%;            /* match container height */
+}
+
+/* Content wrapper */
+.contentcontainer {
+  flex: 1;                 /* take the remaining space */
+  padding: 15px;
+  overflow-y: auto;        /* scroll if content is long */
+  background: #fff;
+  height: 100%;            /* match container height */
+}
+
+/* Tab content inside content-container */
+.tabcontent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

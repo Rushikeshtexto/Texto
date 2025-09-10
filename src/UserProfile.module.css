@@ -17,25 +17,27 @@
 
 
 .container {
-    margin: 0;      /* remove space */
+  margin: 0 auto;
   padding: 0;
-
-  width: 1400px;          /* fixed width */
-  height: 620px;          /* fixed height */
-  display: flex;          /* sidebar + content side by side */
+  width: 1400px;
+  height: 620px;
+  display: flex;           /* row layout */
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;    /* make children stretch full height */
   background: white;
-  margin: 0 auto; 
-  margin-top: 0px;        /* center horizontally */
-  padding: 0;
-  border: 0px solid #333; /* optional: visual boundary */
-  box-sizing: border-box; /* makes padding included in size */
-  overflow: hidden;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.sidebarcontainer {
+  width: 220px;            /* fixed sidebar width */
+  background: #f4f4f4;
+  border-right: 1px solid #ddd;      /* scroll if sidebar is long */
+  height: 100%;            /* match container height */
 }
 
 
-.tab-content {
+.tabcontent {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -54,7 +56,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.profile-title {
+.profiletitle {
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: #222;
@@ -62,7 +64,7 @@
   font-weight: bold;
 }
 
-.profile-info p {
+.profileinfo p {
   display: flex;
   align-items: center;
   margin: 12px 0;
@@ -70,7 +72,7 @@
   color: #333;
 }
 
-.profile-info i {
+.profileinfo i {
   margin-right: 10px;
   color: #007bff;
   min-width: 20px;
@@ -88,7 +90,7 @@
   color: #555;
 }
 
-.back-btn {
+.backbtn {
   margin-top: 20px;
   padding: 10px 16px;
   background: #007bff;
@@ -100,6 +102,6 @@
   transition: background 0.3s ease;
 }
 
-.back-btn:hover {
+.backbtn:hover {
   background: #0056b3;
 }

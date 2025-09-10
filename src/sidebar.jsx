@@ -1,25 +1,25 @@
 import React from "react";
-import "./sidebar.css"; // separate CSS for sidebar
+import styles from "./sidebar.module.css"; // ✅ fixed typo
 
 const Sidebar = ({ activeTab, setActiveTab }) => {
   return (
-    <div className="sidebar">
+    <div className={styles.sidebar}>
       <a
-        className={`tab-link ${activeTab === "home" ? "active" : ""}`}
+        className={`${styles.tablink} ${activeTab === "home" ? styles.active : ""}`}
         onClick={() => setActiveTab("home")}
       >
         Home
       </a>
 
       <a
-        className={`tab-link ${activeTab === "profiles" ? "active" : ""}`}
+        className={`${styles.tablink} ${activeTab === "profiles" ? styles.active : ""}`}
         onClick={() => setActiveTab("profiles")}
       >
         Profiles
       </a>
 
       <a
-        className={`tab-link ${activeTab === "segments" ? "active" : ""}`}
+        className={`${styles.tablink} ${activeTab === "segments" ? styles.active : ""}`}
         onClick={() => setActiveTab("segments")}
       >
         List & Segments

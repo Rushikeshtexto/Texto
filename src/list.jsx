@@ -1,19 +1,19 @@
 import React from "react";
-import "./list.css"
+import  styles from "./list.module.css"
 
 const List=()=>{
     
     return(
 
 
-            <div className="segments-section">
+            <div className={styles.segmentssection}>
               <h2>List & Segments</h2>
               <input
                 type="text"
                 placeholder="🔍 Search segments..."
-                className="segments-search"
+                className={styles.segmentssearch}
               />
-              <div className="segments-buttons">
+              <div className={styles.segmentsbuttons}>
                 <input
                   type="file"
                   accept=".xlsx,.xls,.csv"
@@ -38,12 +38,12 @@ const List=()=>{
                   }}
                 />
                 <button
-                  className="btn add-segment"
+                  className={styles.btnaddsegment}
                   onClick={() => document.getElementById("fileUpload").click()}
                 >
                   Add List
                 </button>
-                <button className="btn add-segment"> Add Segment</button>
+                <button className={styles.btnaddsegment}> Add Segment</button>
               </div>
             </div>
           

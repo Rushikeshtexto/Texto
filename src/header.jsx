@@ -1,16 +1,18 @@
 import React from 'react'
 
-import "./header.css"
+
+import styles from "./header.module.css"
 const Header = () => {
+
   return (
-    <div className="app">
+    <div className={styles.app}>
     {/* Navbar */}
-    <header className="navbar">
-      <div className="logo">Texto</div>
+    <header className={styles.navbar}>
+      <div className={styles.logo}>Texto</div>
       <nav>
         <a href="#">About Us</a>
         <a href="#">Contact Us</a>
-        
+       
       </nav>
 
         </header>
