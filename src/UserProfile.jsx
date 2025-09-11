@@ -48,7 +48,7 @@ const UserProfile = () => {
         <div className={styles.tabcontent}>
           {activeTab === "home" && <Home />}
           {activeTab === "profiles" && (
-            <div className="tablecontainer">
+            <div className={styles.tablecontainer}>
   <h2 className={styles.profiletitle}>
     {user.name.charAt(0).toUpperCase() + user.name.slice(1)} Profile
   </h2>
@@ -88,6 +88,7 @@ const UserProfile = () => {
   <button className={styles.backbtn} onClick={() => navigate("/")}>
     ⬅ Back to Profiles
   </button>
+  
 </div>
 
           )}

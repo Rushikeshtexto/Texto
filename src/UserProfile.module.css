@@ -47,7 +47,7 @@
 
 /* ===== Profile Card ===== */
 .tablecontainer {
-  background: #fff;
+  background: #fafafa;
   border-radius: 12px;
   padding: 24px;
   width: 100%;
@@ -88,6 +88,12 @@
 .value {
   flex: 1;
   color: #555;
+}
+
+
+.back .backbtn{
+
+  margin-left: 500px;
 }
 
 .backbtn {

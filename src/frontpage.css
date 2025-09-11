@@ -1,4 +1,22 @@
 /* Container already defined */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ .app {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: hsl(0, 0%, 100%);
+   margin: 0;
+  padding: 0;
+}
+
+
+
 .container {
   margin: 0 auto;
   padding: 0;
@@ -7,13 +25,13 @@
   display: flex;           /* row layout */
   justify-content: flex-start;
   align-items: stretch;    /* make children stretch full height */
-  background: hsl(12, 11%, 91%);
+  background: hsl(12, 73%, 52%);
   border: 0;
   box-sizing: border-box;
 }
 
 /* Sidebar wrapper */
-.sidebar-container {
+.sidebarcontainer {
   width: 220px;            /* fixed sidebar width */
   background: #f4f4f4;
   border-right: 1px solid #ddd;      /* scroll if sidebar is long */
@@ -25,7 +43,7 @@
   flex: 1;                 /* take the remaining space */
   padding: 15px;
   overflow-y: auto;        /* scroll if content is long */
-  background: #fff;
+  background:#f37272;
   height: 100%;            /* match container height */
 }
 

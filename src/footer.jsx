@@ -1,11 +1,11 @@
 import React from 'react'
-import styles from './Footer.module.css'
+import './footer.css'
+
 const Footer = () => {
   return (
-  <>
-  <footer className={styles.footer}>
-      <div className={styles.footerlogo}>Texto</div>
-      <div className={styles.footergrid}>
+    <footer className="footer">
+      <div className="footerlogo">Texto
+      <div className="footergrid">
         <div>
           <h4>Company</h4>
           <a href="#">About</a>
@@ -28,17 +28,18 @@ const Footer = () => {
           <a href="#">YouTube</a>
           <a href="#">Medium</a>
         </div>
+        
       </div>
 
-      <div className={styles.footerbottom}>
-        <p className={styles.legal}>
+      </div>
+      <div className="footerbottom">
+        <p className="legal">
           Privacy | Security | Cookies | Terms | DLT
         </p>
         {/* <p>© 2022 Gupshup. All rights reserved.</p> */}
       </div>
     </footer>
-  </>
   )
 }
 
-export default Footer;
+export default Footer

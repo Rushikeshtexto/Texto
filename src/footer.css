@@ -1,21 +1,15 @@
-/* Footer */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, .app {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background: #fff;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
 .footer {
-    background: #f0f2f5;
-    padding: 30px 50px;
-    margin-top: 0px;
+    background:white;
+    padding: opx;
+    margin-top: 0px 0px 0px 0px;
   }
   
   .footerlogo {
@@ -25,7 +19,8 @@
   
   .footergrid {
     display: flex;
-    gap: 50px;
+    gap: 10px;
+    margin-top: 10px;
   }
   
   .footergrid h4 {

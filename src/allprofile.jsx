@@ -65,7 +65,7 @@ return(
               <h2>Profiles</h2>
               <input
                 type="text"
-                placeholder="🔍 Search by name, email or phone"
+                placeholder="🔍 Search "
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className={styles.searchbox}
