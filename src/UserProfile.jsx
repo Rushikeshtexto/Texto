@@ -85,13 +85,15 @@ const UserProfile = () => {
     </p>
   </div>
 
-  <button className={styles.backbtn} onClick={() => navigate("/")}>
-    ⬅ Back to Profiles
-  </button>
+ 
   
 </div>
 
+
           )}
+           <button className={styles.backbtn} onClick={() => navigate("/")}>
+     Back
+  </button>
           {activeTab === "segments" && <List />}
         </div>
       </div>

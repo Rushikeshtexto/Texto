@@ -96,3 +96,11 @@
   color: black;
   text-decoration: underline;
 }
+/* Pagination + per-page container */
+.paginationcontainer {
+  display: flex;
+  justify-content: space-between; /* Pagination left, dropdown right */
+  align-items: center;
+  margin-top: 15px;
+ 
+}
