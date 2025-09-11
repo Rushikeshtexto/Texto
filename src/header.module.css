@@ -1,43 +1,85 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body, .app {
   font-family: Arial, sans-serif;
   color: #333;
-  background: #fff;  /* make it same across all */
+  background: #fff;
   display: flex;
   flex-direction: column;
 }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .navbar .logo {
-    font-weight: bold;
-    font-size: 20px;
-  }
-  
-  .navbar nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  .signbtn{
-    background: #c27edf;
-    color: white;
-    border: 10px;
-    padding: 8px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block; 
-  }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Nav section (About, Contact, User) */
+.navbar nav {
+  display: flex;
+  align-items: center;   /* keep all in one line */
+  gap: 20px;             /* spacing between items */
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Profile Circle */
+.profileWrapper {
+  position: relative;
+}
+
+.profileCircle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #c27edf;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.dropdown button {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown button:hover {
+  background: #f0f0f0;
+}
