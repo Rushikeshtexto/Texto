@@ -45,6 +45,7 @@ const Header = () => {
             {open && (
               <div className={styles.dropdown}>
                 <button onClick={handleLogout}>Logout</button>
+                
               </div>
             )}
           </div>
