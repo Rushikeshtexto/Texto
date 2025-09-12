@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Pagination from "./pagination";
-import Dropdown from "./dropdown"; // ✅ Import new dropdown
-import styles from "./allprofile.module.css";
-import { Link } from "react-router-dom";
+import Dropdown from "./dropdown";
 import DisplayRange from "./displayrange";
+import UserDetails from "./UserDetails"; // ✅ import
+
+import styles from "./allprofile.module.css";
+
 const Profile = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(10);
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedUser, setSelectedUser] = useState(null);
 
   const indexOfLast = currentPage * entriesPerPage;
   const indexOfFirst = indexOfLast - entriesPerPage;
@@ -35,22 +38,18 @@ const Profile = () => {
     return String(val);
   };
 
-  // Mask email (hide everything before @)
-const maskEmail = (email) => {
-  if (!email) return "";
-  const [, domain] = email.split("@");
-  return "*****@" + domain;
-};
+  const maskEmail = (email) => {
+    if (!email) return "";
+    const [, domain] = email.split("@");
+    return "*****@" + domain;
+  };
 
-const maskPhone = (phone) => {
-  if (!phone) return "";
-  if (phone.length <= 3) return phone; // if number is too short, just return it
-  return "*".repeat(phone.length - 3) + phone.slice(-3);
-};
+  const maskPhone = (phone) => {
+    if (!phone) return "";
+    if (phone.length <= 3) return phone;
+    return "*".repeat(phone.length - 3) + phone.slice(-3);
+  };
 
-
-
-  // ✅ Dropdown change handler
   const handleItemsPerPageChange = (e) => {
     const newValue = parseInt(e.target.value);
     setEntriesPerPage(newValue);
@@ -70,72 +69,87 @@ const maskPhone = (phone) => {
 
   return (
     <div className={styles.profilessection}>
-      <h2>Profiles</h2>
-
-      <input
-        type="text"
-        placeholder="🔍 Search "
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className={styles.searchbox}
-      />
-
-      {currentEntries.length === 0 ? (
-        <p className={styles.noentries}>⚠️ No entries found.</p>
+      {/* ✅ Switch between list view and details view */}
+      {selectedUser ? (
+        <UserDetails
+          user={selectedUser}
+          onBack={() => setSelectedUser(null)}
+          formatDate={formatDate}
+        />
       ) : (
         <>
-          <div className={styles.tablecontainer}>
-            <table className={styles.profilestable}>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Location</th>
-                  <th>First Active</th>
-                  <th>Last Updated</th>
-                </tr>
-              </thead>
-              <tbody>
-                {currentEntries.map((u, index) => (
-                  <tr
-                    key={u.id}
-                    className={index % 2 === 0 ? styles.evenrow : styles.oddrow}
-                  >
-                    <td>
-                      <Link to={`/profile/${u.id}`} className={styles.color}>
-                        {u.name}
-                      </Link>
-                    </td>
-                    <td>{maskEmail(safeValue(u.email))}</td>
-                    <td>{maskPhone(u.phone)}</td>
-                    <td>{u.location}</td>
-                    <td>{formatDate(u.first_active)}</td>
-                    <td>{formatDate(u.last_updated)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2>Profiles</h2>
 
-          {/* ✅ Footer: Dropdown + Pagination in one row */}
-          <div className={styles.paginationcontainer}>
-            <Dropdown
-              entriesPerPage={entriesPerPage}
-              onItemsPerPageChange={handleItemsPerPageChange}
-            />
+          {/* Search */}
+          <input
+            type="text"
+            placeholder="🔍 Search "
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className={styles.searchbox}
+          />
 
-<DisplayRange
- currentPage={currentPage} 
-  entriesPerPage={entriesPerPage} 
-  totalItems={filteredUsers.length} 
-/>
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          </div>
+          {currentEntries.length === 0 ? (
+            <p className={styles.noentries}>⚠️ No entries found.</p>
+          ) : (
+            <>
+              {/* Table */}
+              <div className={styles.tablecontainer}>
+                <table className={styles.profilestable}>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Location</th>
+                      <th>First Active</th>
+                      <th>Last Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentEntries.map((u) => (
+                      <tr key={u.id}>
+                        <td>
+                          <span
+                            className={styles.color}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedUser(u)} // ✅ open details
+                          >
+                            {u.name}
+                          </span>
+                        </td>
+                        <td>{maskEmail(safeValue(u.email))}</td>
+                        <td>{maskPhone(u.phone)}</td>
+                        <td>{u.location}</td>
+                        <td>{formatDate(u.first_active)}</td>
+                        <td>{formatDate(u.last_updated)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Footer: dropdown + pagination */}
+              <div className={styles.paginationcontainer}>
+                <Dropdown
+                  entriesPerPage={entriesPerPage}
+                  onItemsPerPageChange={handleItemsPerPageChange}
+                />
+
+                <DisplayRange
+                  currentPage={currentPage}
+                  entriesPerPage={entriesPerPage}
+                  totalItems={filteredUsers.length}
+                />
+
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={setCurrentPage}
+                />
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
